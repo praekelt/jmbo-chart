@@ -1,7 +1,7 @@
-from panya.generic.views import GenericObjectDetail, GenericObjectList
-from panya.view_modifiers import IntegerFieldRangeViewModifier
+from jmbo.generic.views import GenericObjectDetail, GenericObjectList
+from jmbo.view_modifiers import IntegerFieldRangeViewModifier
 from chart.models import Chart
-from panya.view_modifiers import IntegerFieldRangeViewModifier
+from jmbo.view_modifiers import IntegerFieldRangeViewModifier
 
 class ObjectList(GenericObjectList):
     def get_extra_context(self, *args, **kwargs):

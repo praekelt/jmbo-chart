@@ -3,7 +3,7 @@ from datetime import datetime
 from django.core.urlresolvers import reverse
 from django.db import models
 
-from panya.models import ModelBase
+from jmbo.models import ModelBase
 from music.models import Track
 from preferences.models import Preferences
 

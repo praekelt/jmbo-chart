@@ -1,19 +1,19 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='panya-chart',
+    name='jmbo-chart',
     version='0.0.4',
-    description='Panya chart app.',
+    description='Jmbo chart app.',
     long_description = open('README.rst', 'r').read(),
-    author='Praekelt International',
+    author='Praekelt Foundation',
     author_email='dev@praekelt.com',
     license='BSD',
-    url='http://github.com/praekelt/panya-chart',
+    url='http://github.com/praekelt/jmbo-chart',
     packages = find_packages(),
     install_requires = [
         'django-preferences',
-        'panya',
-        'panya-music',
+        'jmbo',
+        'jmbo-music',
     ],
     include_package_data=True,
     classifiers = [

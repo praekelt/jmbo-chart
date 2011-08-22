@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from panya.admin import ModelBaseAdmin
+from jmbo.admin import ModelBaseAdmin
 from chart.models import Chart, ChartEntry, ChartPreferences
 
 
