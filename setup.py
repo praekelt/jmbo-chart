@@ -1,4 +1,10 @@
 from setuptools import setup, find_packages
+from setuptools.command.test import test
+
+def run_tests(self):
+    from setuptest.runtests import runtests
+    return runtests(self)
+test.run_tests = run_tests
 
 setup(
     name='jmbo-chart',
@@ -15,6 +21,10 @@ setup(
         'jmbo',
         'jmbo-music',
     ],
+    tests_require=[
+        'django-setuptest',
+    ],
+    test_suite="chart.tests",
     include_package_data=True,
     classifiers = [
         "Programming Language :: Python",
