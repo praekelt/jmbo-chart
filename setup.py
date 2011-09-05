@@ -4,7 +4,7 @@ setup(
     name='jmbo-chart',
     version='0.0.4',
     description='Jmbo chart app.',
-    long_description = open('README.rst', 'r').read(),
+    long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Praekelt Foundation',
     author_email='dev@praekelt.com',
     license='BSD',
