@@ -10,9 +10,10 @@ TRACK_COUNT = 20
 
 CONTRIBUTOR_ROLE = [[1, "Artist"], [2, "Producer"], [3, "Composer"]]
 
+
 def generate():
     objects = []
-    
+
     # generate chart track objects
     for i in range(1, CREDIT_COUNT + 1):
         contributor_role = random.choice(CONTRIBUTOR_ROLE)
@@ -24,13 +25,14 @@ def generate():
                     "model": "music.Track",
                     "fields": {
                         "title": "Chart Track %s Title" % i,
-                        "description": "Chart Track %s description with some added text to verify truncates where needed." % i,
+                        "description": "Chart Track %s description with some \
+added text to verify truncates where needed." % i,
                         "state": "published",
                         "image": random.sample(IMAGES, 1)[0],
                         "video_embed": "",
                         "sites": {
                             "model": "sites.Site",
-                            "fields": { 
+                            "fields": {
                                 "name": "example.com"
                             }
                         },
@@ -38,12 +40,13 @@ def generate():
                             "model": "music.Album",
                             "fields": {
                                 "title": "Chart Album %s Title" % i,
-                                "description": "Chart Album %s description with some added text to verify truncates where needed." % i,
+                                "description": "Chart Album %s description \
+with some added text to verify truncates where needed." % i,
                                 "state": "published",
                                 "image": random.sample(IMAGES, 1)[0],
                                 "sites": {
                                     "model": "sites.Site",
-                                    "fields": { 
+                                    "fields": {
                                         "name": "example.com"
                                     }
                                 },
@@ -55,12 +58,13 @@ def generate():
                     "model": "music.TrackContributor",
                     "fields": {
                         "title": "Chart Track Contributor %s Title" % i,
-                        "description": "Chart Track Contributor %s description with some added text to verify truncates where needed." % i,
+                        "description": "Chart Track Contributor %s \
+description with some added text to verify truncates where needed." % i,
                         "state": "published",
                         "image": random.sample(IMAGES, 1)[0],
                         "sites": {
                             "model": "sites.Site",
-                            "fields": { 
+                            "fields": {
                                 "name": "example.com"
                             }
                         },
@@ -68,10 +72,10 @@ def generate():
                 },
             },
         })
-    
+
     # gen chart entry objects
     for i in range(1, CHART_ENTRY_COUNT + 1):
-        
+
         objects.append({
             "model": "chart.ChartEntry",
             "fields": {
@@ -87,7 +91,7 @@ def generate():
                         "image": random.sample(IMAGES, 1)[0],
                         "sites": {
                             "model": "sites.Site",
-                            "fields": { 
+                            "fields": {
                                 "name": "example.com"
                             }
                         },
@@ -101,7 +105,7 @@ def generate():
                 },
             },
         })
-    
+
     # create chart options
     objects.append({
         "model": "preferences.ChartPreferences",
@@ -114,5 +118,5 @@ def generate():
             },
         }
     })
-    
+
     load_json(objects)

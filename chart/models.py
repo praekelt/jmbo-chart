@@ -7,21 +7,23 @@ from jmbo.models import ModelBase
 from music.models import Track
 from preferences.models import Preferences
 
+
 class Chart(ModelBase):
     class Meta:
         verbose_name = 'Chart'
         verbose_name_plural = 'Charts'
-    
+
     def get_absolute_url(self):
         return reverse('chart_object_detail', kwargs={'slug': self.slug})
-        
+
     def __unicode__(self):
         return self.title
+
 
 class ChartEntry(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     chart = models.ForeignKey(
-        Chart, 
+        Chart,
         related_name='chartentries'
     )
     track = models.ForeignKey(Track)
@@ -40,18 +42,19 @@ class ChartEntry(models.Model):
     remove = models.BooleanField(
         help_text="On the next update this entry will be removed completely."
     )
-    
+
     class Meta:
         verbose_name = 'Chart entry'
         verbose_name_plural = 'Chart entries'
         ordering = ['current_position']
-    
+
     def get_duration_on_chart(self):
         return datetime.now() - (datetime.now() - self.created)
-    
+
     def __unicode__(self):
         return '%s Entry %s' % (self.chart.title, self.current_position)
-        
+
+
 class ChartPreferences(Preferences):
     __module__ = 'preferences.models'
 
@@ -60,9 +63,9 @@ class ChartPreferences(Preferences):
         null=True,
         help_text="Select the primary chart link from the navigation.",
         related_name='chartoptions_primary_chart',
-        limit_choices_to = {'state': 'published'}
+        limit_choices_to={'state': 'published'}
     )
-    
+
     class Meta:
         verbose_name = 'Chart preferences'
         verbose_name_plural = 'Chart preferences'

@@ -2,6 +2,7 @@ from django.core.management.base import BaseCommand
 
 from chart.models import Chart
 
+
 class Command(BaseCommand):
     def handle(self, *app_labels, **options):
         object_list = Chart.objects.all()
