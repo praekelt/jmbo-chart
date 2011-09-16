@@ -2,7 +2,7 @@ from jmbo.generic.views import GenericObjectDetail, GenericObjectList
 from jmbo.view_modifiers import IntegerFieldRangeViewModifier
 from chart.models import Chart
 from jmbo.view_modifiers import IntegerFieldRangeViewModifier
-
+from music.models import Track
 
 class ObjectList(GenericObjectList):
     def get_extra_context(self, *args, **kwargs):
@@ -32,8 +32,9 @@ object_list = ObjectList()
 class ObjectDetail(GenericObjectList):
     def get_queryset(self, *args, **kwargs):
         slug = kwargs['slug']
-        return Chart.permitted.get(slug=slug).chartentries.all().\
-                order_by('current_position')
+        return Chart.permitted.get(slug=slug).chartentries.filter(
+            track=Track.permitted.all()
+        )
 
     def get_view_modifier(self, request, *args, **kwargs):
         return IntegerFieldRangeViewModifier(

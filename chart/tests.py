@@ -7,7 +7,7 @@ from chart.views import ObjectDetail
 class TestCase(TestCase):
 
     def setUp(self):
-        self.track_public = Track.objects.create(title='Track public')
+        self.track_public = Track.objects.create(title='Track public', state='published')
         self.track_public.sites = [1]
         self.track_public.save()
         self.track_not_public = Track.objects.create(title='Track not public')
