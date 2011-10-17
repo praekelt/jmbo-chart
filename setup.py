@@ -11,8 +11,6 @@ setup(
     url='http://github.com/praekelt/jmbo-chart',
     packages = find_packages(),
     install_requires = [
-        'django-preferences',
-        'jmbo',
         'jmbo-music',
     ],
     tests_require=[
