@@ -1,0 +1,50 @@
+[   
+    {
+        "pk": null, 
+        "model": "photologue.photosize", 
+        "fields": {
+            "name": "chart_detail_videoembed_basic", 
+            "watermark": null, 
+            "increment_count": false, 
+            "effect": null, 
+            "crop": true, 
+            "height": 48, 
+            "width": 48, 
+            "upscale": false, 
+            "pre_cache": false, 
+            "quality": 90
+        }
+    },
+    {
+        "pk": null, 
+        "model": "photologue.photosize", 
+        "fields": {
+            "name": "chart_detail_videoembed_smart", 
+            "watermark": null, 
+            "increment_count": false, 
+            "effect": null, 
+            "crop": true, 
+            "height": 64, 
+            "width": 64, 
+            "upscale": false, 
+            "pre_cache": false, 
+            "quality": 90
+        }
+    },
+    {
+        "pk": null, 
+        "model": "photologue.photosize", 
+        "fields": {
+            "name": "chart_detail_videoembed_web", 
+            "watermark": null, 
+            "increment_count": false, 
+            "effect": null, 
+            "crop": true, 
+            "height": 64, 
+            "width": 64, 
+            "upscale": false, 
+            "pre_cache": false, 
+            "quality": 90
+        }
+    }
+]
