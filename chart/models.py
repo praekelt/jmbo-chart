@@ -3,21 +3,19 @@ from datetime import datetime
 from django.core.urlresolvers import reverse
 from django.db import models
 
+from preferences.models import Preferences
 from jmbo.models import ModelBase
 from music.models import Track
-from preferences.models import Preferences
 
 
 class Chart(ModelBase):
-    class Meta:
-        verbose_name = 'Chart'
-        verbose_name_plural = 'Charts'
-
-    def get_absolute_url(self):
-        return reverse('chart_object_detail', kwargs={'slug': self.slug})
-
-    def __unicode__(self):
-        return self.title
+    
+    @property
+    def chartentries_permitted(self):
+        #import pdb;pdb.set_trace()
+        return self.chartentries.filter(
+            track__in=Track.permitted.all()
+        ).order_by('current_position')
 
 
 class ChartEntry(models.Model):
