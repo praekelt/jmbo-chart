@@ -1,8 +1,8 @@
 Changelog
 =========
 
-next
-----
+0.1
+---
 #. Introduce dependency on `jmbo-foundry`.
 #. Simplify templates and remove excessive views.
 
