@@ -2,6 +2,7 @@ from datetime import datetime
 
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils import timezone
 
 from preferences.models import Preferences
 from jmbo.models import ModelBase
@@ -47,7 +48,10 @@ class ChartEntry(models.Model):
         ordering = ['current_position']
 
     def get_duration_on_chart(self):
-        return datetime.now() - (datetime.now() - self.created)
+        now = timezone.now()
+        if not timezone.is_aware(self.created):
+            now = datetime.now()
+        return now - (now - self.created)
 
     def __unicode__(self):
         return '%s Entry %s' % (self.chart.title, self.current_position)
