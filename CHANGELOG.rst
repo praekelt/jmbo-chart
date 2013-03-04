@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.1.1 (2013-03-04)
+------------------
+#. Make `jmbo-chart` timezone-aware.
+
 0.1
 ---
 #. Introduce dependency on `jmbo-foundry`.
