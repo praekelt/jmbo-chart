@@ -13,7 +13,6 @@ class Chart(ModelBase):
 
     @property
     def chartentries_permitted(self):
-        #import pdb;pdb.set_trace()
         return self.chartentries.filter(
             track__in=Track.permitted.all()
         ).order_by('current_position')
