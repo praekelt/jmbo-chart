@@ -9,7 +9,7 @@ from music.models import Track
 
 
 class Chart(ModelBase):
-    
+
     @property
     def chartentries_permitted(self):
         #import pdb;pdb.set_trace()
