@@ -25,7 +25,6 @@ INSTALLED_APPS = (
     'category',
     'likes',
     'secretballot',
-    'pagination',
     'publisher',
     'preferences',
     'django.contrib.admin',
