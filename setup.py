@@ -11,10 +11,10 @@ setup(
     url='http://github.com/praekelt/jmbo-chart',
     packages = find_packages(),
     install_requires = [
-        'jmbo-music',   # >= 1.0.1
+        'jmbo-music>=0.2.7',
     ],
     tests_require=[
-        'django-setuptest>=0.1.2',
+        'django-setuptest>=0.1.4',
     ],
     test_suite="setuptest.setuptest.SetupTestSuite",
     include_package_data=True,

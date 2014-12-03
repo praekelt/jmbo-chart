@@ -4,7 +4,7 @@ Changelog
 next
 ----
 #. PEP8 cleanup.
-#. Remove redundant test.
+#. Refactor tests.
 
 0.1
 ---
