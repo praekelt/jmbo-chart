@@ -30,8 +30,8 @@ class TestCase(BaseTestCase):
         cls.chart = Chart.objects.create(title='Chart', state='published')
         cls.chart.sites = [1]
         cls.chart.save()
-        ChartEntry.objects.create(chart=cls.chart, track=cls.track_public)
-        ChartEntry.objects.create(chart=cls.chart, track=cls.track_not_public)
+        ChartEntry.objects.create(chart=cls.chart, track=cls.track_public, remove=False)
+        ChartEntry.objects.create(chart=cls.chart, track=cls.track_not_public, remove=False)
 
     def test_chart_detail(self):
         response = self.client.get(self.chart.get_absolute_url())

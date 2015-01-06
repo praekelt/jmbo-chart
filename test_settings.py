@@ -62,6 +62,7 @@ USE_TZ = True
 SITE_ID = 1
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static/'
 
 CKEDITOR_UPLOAD_PATH = expanduser('~')
 
