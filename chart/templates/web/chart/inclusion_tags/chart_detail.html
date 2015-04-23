@@ -12,7 +12,7 @@
     {% for chartentry in object.chartentries_permitted %}
     <tr>
         <td>{{ chartentry.current_position }}</td>
-        <td>{% if chartentry.track.image %}<img src="{{ chartentry.track.get_modelbase_list_item_thumbnail_LAYER_url }}" />{% endif %}</td>
+        <td>{% if chartentry.track.image %}<img src="{{ chartentry.track.get_modelbase_list_item_thumbnail_url }}" />{% endif %}</td>
 	    <td>
             {% with chartentry.track.primary_contributors_permitted as primary_contributors_permitted %}
                 {{ chartentry.track.title }}{% if primary_contributors_permitted %} - {{ primary_contributors_permitted|join:", " }}{% endif %}
@@ -30,9 +30,11 @@
         <td>
             {% if chartentry.track.video_embed %}
                 <div class="video">
-                    <a href="{{ chartentry.track.get_absolute_url }}" onclick="document.location='http://m.youtube.com/watch?gl=ZA&hl=en&client=mv-google&v={{ chartentry.track.youtube_id }}'; return false;">
-                        <img src="{{ chartentry.track.get_chart_detail_videoembed_LAYER_url }}" alt="{{ chartentry.track.title }}" />
-                    </a>
+                    {% if chartentry.track.image %}
+                        <a href="{{ chartentry.track.get_absolute_url }}" onclick="document.location='http://m.youtube.com/watch?gl=ZA&hl=en&client=mv-google&v={{ chartentry.track.youtube_id }}'; return false;">
+                            <img src="{{ chartentry.track.get_chart_detail_videoembed_url }}" alt="{{ chartentry.track.title }}" />
+                        </a>
+                    {% endif %}
                 </div>
             {% endif %}
         </td>
