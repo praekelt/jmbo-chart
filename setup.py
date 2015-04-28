@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='jmbo-chart',
-    version='0.1',
+    version='2.0.0a1',
     description='Jmbo chart app.',
     long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Praekelt Foundation',
@@ -11,10 +11,11 @@ setup(
     url='http://github.com/praekelt/jmbo-chart',
     packages = find_packages(),
     install_requires = [
-        'jmbo-music',   # >= 1.0.1
+        'jmbo-music==2.0.0a1',
     ],
     tests_require=[
-        'django-setuptest>=0.1.2',
+        'django-setuptest>=0.1.4',
+        'psycopg2',
     ],
     test_suite="setuptest.setuptest.SetupTestSuite",
     include_package_data=True,

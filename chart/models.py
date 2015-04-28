@@ -2,6 +2,7 @@ from datetime import datetime
 
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils import timezone
 
 from preferences.models import Preferences
 from jmbo.models import ModelBase
@@ -9,10 +10,9 @@ from music.models import Track
 
 
 class Chart(ModelBase):
-    
+
     @property
     def chartentries_permitted(self):
-        #import pdb;pdb.set_trace()
         return self.chartentries.filter(
             track__in=Track.permitted.all()
         ).order_by('current_position')
@@ -47,7 +47,10 @@ class ChartEntry(models.Model):
         ordering = ['current_position']
 
     def get_duration_on_chart(self):
-        return datetime.now() - (datetime.now() - self.created)
+        now = timezone.now()
+        if not timezone.is_aware(self.created):
+            now = datetime.now()
+        return now - (now - self.created)
 
     def __unicode__(self):
         return '%s Entry %s' % (self.chart.title, self.current_position)
