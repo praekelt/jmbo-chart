@@ -1,8 +1,8 @@
 Changelog
 =========
 
-next
-----
+2.0.0a1
+-------
 #. PEP8 cleanup.
 #. Refactor tests.
 #. Django 1.6 compatibility.
