@@ -5,6 +5,8 @@ next
 ----
 #. PEP8 cleanup.
 #. Refactor tests.
+#. Django 1.6 compatibility.
+#. Up minimum jmbo to 2.0.0.
 
 0.1
 ---
