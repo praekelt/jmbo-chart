@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.0
+-----
+#. Depend on jmbo-music stable version 2.0.0.
+
 2.0.0a1
 -------
 #. PEP8 cleanup.
